@@ -13,6 +13,13 @@
 # US17 - Liv
 
 # US18 - Liv
+def US18_male_last_names_anomaly(fam):
+    lastName = fam.husbandObject.name.split('/')[1]
+    for child in fam.childrenObjects:
+        if child.gender == 'M':
+            if lastName != child.name.split('/')[1]:
+                fam.anomalies.append("Males of the same family should have the same last name")
+
 
 # US19 - Angie
 
