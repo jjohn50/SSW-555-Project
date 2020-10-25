@@ -20,3 +20,6 @@ def US19_no_marriages_to_descendants_anomaly(fam):
         fam.anomalies.append("Parents should not marry their children")
 
 # US20 - Angie
+def US20_siblings_should_not_marry_anomaly(fam):
+    if fam.husbandObject.childFamilyObject != "" and fam.husbandObject.childFamilyObject == fam.wifeObject.childFamilyObject:
+        fam.anomalies.append("Siblings should not marry")
