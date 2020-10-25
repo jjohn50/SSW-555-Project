@@ -24,6 +24,6 @@ def check_families_for_errors_and_anomalies():
     US08_check_child_birth_before_mother_death_error(fam)
     US09_check_child_birth_before_marriage_anomaly(fam)
     US10_check_marriage_after_14_anomaly(fam)
-    US13_FatherDeath_Before_Child_Birth(fam)
-    US14_Parents_not_too_old(fam)
+    US13_fatherdeath_before_child_birth(fam)
+    # US14_Parents_not_too_old(fam)
     US20_siblings_should_not_marry_anomaly(fam)
