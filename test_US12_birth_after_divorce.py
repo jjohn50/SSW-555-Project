@@ -13,6 +13,7 @@ class Test(unittest.TestCase):
         
     def testBornAfterDivorce(self):
         testFam = self.testFam
+        testFam.divorced = True
         testChild1 = self.testChild1
         testChild1.birthDateObject = datetime(2020, 5, 3)
         US12_check_child_birth_after_divorce_anomaly(testFam)
@@ -39,6 +40,7 @@ class Test(unittest.TestCase):
 
     def testBornBeforeAndAfter(self):
         testFam = self.testFam
+        testFam.divorced = True
         testChild1 = self.testChild1
         testChild2 = Individual("I2")
         testFam.childrenObjects.append(testChild2)
