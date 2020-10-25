@@ -4,35 +4,37 @@ import math
 
 # US12 - Jenn
 
-# US13 - Justin
-# def US13_FatherDeath_Before_Child_Birth(fam):      
-#     for child in fam.childrenObjects:
-#         if(abs(fam.husbandObject.deathDateObject-child.birthDateObject).days) > 274:
-#             fam.anomalies.append("Child was born after 9 months after death of father")
-
-#Mother should be less than 60 years older than her children and father should be less than 80 years older than his children 
-def US14_Parents_not_too_old(fam):
-    for child in fam.childrenObjects:
-        day1 = fam.wifeObject.birthDateObject
-        day2 = child.birthDateObject
-        day3 = (((day2 - day1).days)/365)
-        day4 = fam.husbandObject.birthDateObject
-        day5 = child.birthDateObject 
-        day6 = (((day5 - day4).days)/365) 
-        if day3 >= 60 :
-            fam.anomalies.append("Mother is 60 years older than child/ren")
-        if day6 >= 80:
-            fam.anomalies.append("Father is 80 years older than child/ren")
-
 def US15_Siblings_Spacing(fam):
-        for child in fam.childrenObjects:
-            day1 = child.birthDateObject
-            day2 = child.birthDateObject 
+    for i in range(0, len(fam.childrenObjects)-1):
+        day1 = fam.childrenObjects[i].birthDateObject
+        for j in range(i+1, len(fam.childrenObjects)):
+            day2 = fam.childrenObjects[j].birthDateObject
             day3 = (abs((day2 - day1).days))
-            if day3 > 2 or day3 < 240:
+            if day3 > 2 and day3 < 274:
                 fam.anomalies.append("Siblings were born too close together")
 
-# US16 - Matt goal Multiple births <= 5 US16_mutiplebirths 
+
+def US16_Multiple_births(fam):
+    for i in range(0,len(fam.childrenObjects)-1):
+        birthday = fam.childrenObjects[i].birthDateObject
+        counterId=1
+        for j in range(i+1, len(fam.childrenObjects)):
+            birthday2 = fam.childrenObjects[j].birthDateObject
+            if birthday == birthday2:
+                counterId = counterId+1 
+        if counterId >= 5:
+            fam.anomalies.append("Too many births at one time")
+            break
+        
+        
+# we need to look at all children
+# then we need to save the bday of child
+# set count id = 0
+# then  we need to compare that child with all their siblng
+# if have same b day increment count
+# then before iterating to next child (outside second for within first) check if count >= 5
+# if it is then append the error
+
 # US17 - Liv
 
 # US18 - Liv
