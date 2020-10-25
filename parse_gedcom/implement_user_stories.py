@@ -26,4 +26,5 @@ def check_families_for_errors_and_anomalies():
     US10_check_marriage_after_14_anomaly(fam)
     US17_fewer_than_15_siblings_anomaly(fam)
     US18_male_last_names_anomaly(fam)
+    US19_no_marriages_to_descendants_anomaly(fam)
     US20_siblings_should_not_marry_anomaly(fam)
