@@ -25,6 +25,8 @@ def check_families_for_errors_and_anomalies():
     US09_check_child_birth_before_marriage_anomaly(fam)
     US10_check_marriage_after_14_anomaly(fam)
     US12_check_child_birth_after_divorce_anomaly(fam)
+    US15_Siblings_Spacing(fam)
+    US16_Multiple_births(fam) 
     US17_fewer_than_15_siblings_anomaly(fam)
     US18_male_last_names_anomaly(fam)
     US19_no_marriages_to_descendants_anomaly(fam)
