@@ -1,7 +1,7 @@
 0 HEAD
 0 NOTE Angelina Zaccaria
 1 SOUR Family Echo
-2 WWW http://www.familyecho.com/
+2 WWW http://www.familyecho.com/ 
 1 FILE My Family
 1 DATE 7 SEP 2020
 1 DEST ANSTFILE
@@ -110,7 +110,7 @@
 2 _MARNM Zaccaria
 1 SEX M
 1 BIRT
-2 DATE 13 JUN 1979
+2 DATE 13 OCT 1986
 1 FAMC @F5@
 0 @I11@ INDI
 1 NAME Marcina /Zaccaria/
@@ -181,8 +181,6 @@
 1 SEX F
 1 BIRT
 2 DATE 1 JAN 1961
-1 DEAT Y
-2 DATE 17 JUN 1990
 1 FAMS @F8@
 0 @I18@ INDI
 1 NAME Lisa /Frock/
