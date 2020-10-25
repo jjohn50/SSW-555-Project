@@ -11,6 +11,9 @@
 # US16 - Matt
 
 # US17 - Liv
+def  US17_fewer_than_15_siblings_anomaly(fam):
+    if len(fam.childrenObjects) >= 15:
+        fam.anomalies.append("There should be fewer than 15 siblings in a family")
 
 # US18 - Liv
 def US18_male_last_names_anomaly(fam):
