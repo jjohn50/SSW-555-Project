@@ -1,6 +1,7 @@
 from parser import individuals, families
 from sprint1_user_stories import *
 from sprint2_user_stories import *
+from sprint3_user_stories import *
 
 # individual errors and anomalies
 def check_individuals_for_errors_and_anomalies():
