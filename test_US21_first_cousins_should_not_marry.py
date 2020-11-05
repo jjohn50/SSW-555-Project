@@ -52,5 +52,20 @@ class Test(unittest.TestCase):
         self.assertEqual(len(testFam1.anomalies), 1)
         self.assertEqual(testFam1.anomalies[0], "First cousins should not marry")
 
+    def test_first_cousins_are_married_null_parent(self):
+        husband = self.husband
+        wife = self.wife
+        testFam1 = self.testFam1
+        testFam2 = self.testFam2
+        testFam3 = self.testFam3
+        testFam4 = Family("F4")
+        testFam2.husbandObject.childFamilyObject = testFam4
+        testFam2.wifeObject = ""
+        testFam3.wifeObject.childFamilyObject = testFam4
+        testFam3.husbandObject = ""
+        US21_first_cousins_should_not_marry_anomaly(testFam1)
+        self.assertEqual(len(testFam1.anomalies), 1)
+        self.assertEqual(testFam1.anomalies[0], "First cousins should not marry")
+
 if __name__ == "__main__":
     unittest.main()
