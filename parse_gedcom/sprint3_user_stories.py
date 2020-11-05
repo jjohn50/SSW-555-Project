@@ -27,7 +27,6 @@
 
 # US30 - Liv
 def US30_large_age_gaps_between_couples_anomalies(fam):
-    wife = fam.wifeObject
     if(fam.wifeObject.age > (fam.husbandObject.age * 2)):
         fam.anomalies.append("Wife is more than twice the age of the Husband")
     if(fam.husbandObject.age > (fam.wifeObject.age * 2)):
