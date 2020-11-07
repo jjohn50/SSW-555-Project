@@ -12,6 +12,7 @@ def check_individuals_for_errors_and_anomalies():
     US03_check_birth_before_death_error(indiv)
     US07_check_age_less_than_150_error(indiv)
     US11_no_bigamy_anomaly(indiv)
+    US25_unique_birthday_and_name(indiv)
     
 # family errors and anomalies
 def check_families_for_errors_and_anomalies():
