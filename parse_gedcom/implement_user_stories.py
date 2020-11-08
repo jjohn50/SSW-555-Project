@@ -38,6 +38,8 @@ def check_families_for_errors_and_anomalies():
     US20_siblings_should_not_marry_anomaly(fam)
     US21_first_cousins_should_not_marry_anomaly(fam)
     US22_aunt_uncle_should_not_marry_anomaly(fam)
+    US23_Correct_gender_for_role(fam)
     US27_no_duplicate_children_error(fam)
     US28_corresponding_family_entries_error(fam)
     US30_large_age_gaps_between_couples_anomalies(fam)
+
