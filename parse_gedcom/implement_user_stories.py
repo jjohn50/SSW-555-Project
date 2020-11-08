@@ -5,6 +5,7 @@ from sprint3_user_stories import *
 
 # individual errors and anomalies
 def check_individuals_for_errors_and_anomalies():        
+  US24_Unique_IDs(individuals,"individuals")
   for indiv in individuals:
     US01_check_date_before_today_error(indiv,"Birth")
     if indiv.alive == False:
@@ -13,8 +14,10 @@ def check_individuals_for_errors_and_anomalies():
     US07_check_age_less_than_150_error(indiv)
     US11_no_bigamy_anomaly(indiv)
     
+    
 # family errors and anomalies
 def check_families_for_errors_and_anomalies():
+  US24_Unique_IDs(families,"families")
   for fam in families:
     US01_check_date_before_today_error(fam,"Marriage")
     if fam.divorced == True:
@@ -35,3 +38,4 @@ def check_families_for_errors_and_anomalies():
     US18_male_last_names_anomaly(fam)
     US19_no_marriages_to_descendants_anomaly(fam)
     US20_siblings_should_not_marry_anomaly(fam)
+    
