@@ -57,11 +57,13 @@ def get_individual_by_id(individualId):
   for i in individuals:
     if i.Id == individualId:
       return i
+  return ""
 
 def get_family_by_id(familyId):
   for f in families:
     if f.Id == familyId:
       return f
+  return ""
 
 def populate_gedcom_data(Gedcom_File): 
   findinglabels = False
