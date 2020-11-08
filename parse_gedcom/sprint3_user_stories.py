@@ -7,9 +7,11 @@
 # US23 - Matt
 def US23_Correct_gender_for_role(fam):
     if fam.husbandObject.gender == 'F':
-        fam.anomalies.append("Husband is a female")
+        fam.errors.append("Husband is a female")
     if fam.wifeObject.gender == 'M':
-        fam.anomalies.append("Wife is a male")     
+        fam.errors.append("Wife is a male")     
+
+
 
 # US24 - Matt
 
