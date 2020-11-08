@@ -53,8 +53,9 @@ class Test(unittest.TestCase):
         wife.gender = 'M'
         testFam1 = self.testFam1   
         US23_Correct_gender_for_role(testFam1)
-        self.assertEqual(len(testFam1.anomalies), 2)
-        self.assertEqual(testFam1.anomalies[0], "Husband is a female", "Wife is a male")
+        self.assertEqual(len(testFam1.errors), 2)
+        self.assertEqual(testFam1.errors[0], "Husband is a female")
+        self.assertEqual(testFam1.errors[1], "Wife is a male")
 
 if __name__ == "__main__":
     unittest.main()
