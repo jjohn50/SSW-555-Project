@@ -4,8 +4,8 @@ from sprint2_user_stories import *
 from sprint3_user_stories import *
 
 # individual errors and anomalies
-def check_individuals_for_errors_and_anomalies():        
-  US24_Unique_IDs(individuals,"individuals")
+def check_individuals_for_errors_and_anomalies():
+  US24_Unique_IDs(individuals, "individuals")
   for indiv in individuals:
     US01_check_date_before_today_error(indiv,"Birth")
     if indiv.alive == False:
@@ -14,7 +14,6 @@ def check_individuals_for_errors_and_anomalies():
     US07_check_age_less_than_150_error(indiv)
     US11_no_bigamy_anomaly(indiv)
     US28_corresponding_individual_entries_error(indiv)
-    
     
 # family errors and anomalies
 def check_families_for_errors_and_anomalies():
@@ -45,4 +44,3 @@ def check_families_for_errors_and_anomalies():
     US27_no_duplicate_children_error(fam)
     US28_corresponding_family_entries_error(fam)
     US30_large_age_gaps_between_couples_anomalies(fam)
-
