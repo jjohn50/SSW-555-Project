@@ -63,9 +63,9 @@ def US22_aunt_uncle_should_not_marry_anomaly(fam):
 # US23 - Matt
 def US23_Correct_gender_for_role(fam):
     if fam.husbandObject.gender == 'F':
-        fam.anomalies.append("Husband is a female")
+        fam.errors.append("Husband is a female")
     if fam.wifeObject.gender == 'M':
-        fam.anomalies.append("Wife is a male")
+        fam.errors.append("Wife is a male")
         
 # US24 - Matt
 def US24_Unique_IDs(id_list, identifier):
