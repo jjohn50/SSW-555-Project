@@ -6,28 +6,19 @@
         
 # US23 - Matt
 
-
-    # for i in range(0,len(fam.indivObjects)-1):
-    #     birthday = fam.childrenObjects[i].birthDateObject
-    #     counterId=1
-    #     for j in range(i+1, len(fam.childrenObjects)):
-    #         birthday2 = fam.childrenObjects[j].birthDateObject
-    #         if birthday == birthday2:
-    #             counterId = counterId+1 
-    #     if counterId >= 5:
-    #         fam.anomalies.append("Too many births at one time")
-    #         break
 # US24 - Matt
-def US24_Unique_IDs(fam):
-    for i in range(0,len(fam.indiv)-1): 
-        Id = indiv[i].Id
-        if indiv.Id == indiv.Id:
-            fam.errors.append("These indiv IDs are the same") 
-    for j in range(0,len(fam.Id)-1):
-        fam.Id == fam[j].Id
-        if fam.Id ==fam.Id:
-            fam.errors.append("These two family IDs are the same")
-
+def US24_Unique_IDs(id_list, identifier):
+    duplicates = {}
+    for obj in id_list:
+        if obj.Id not in str(duplicates.items()):
+            duplicates.update({obj.Id:[obj]})
+        else:
+            duplicates[obj.Id].append(obj)
+    for key, value in duplicates.items():
+        if len(value) > 1:
+            errorMsg = "There are " + str(len(value)) + " " + identifier + " with id " + key
+            for obj in value:
+                obj.errors.append(errorMsg)
 
 # US25 - Justin
 
