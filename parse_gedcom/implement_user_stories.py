@@ -36,4 +36,6 @@ def check_families_for_errors_and_anomalies():
     US18_male_last_names_anomaly(fam)
     US19_no_marriages_to_descendants_anomaly(fam)
     US20_siblings_should_not_marry_anomaly(fam)
+    US27_no_duplicate_children_error(fam)
     US28_corresponding_family_entries_error(fam)
+    US30_large_age_gaps_between_couples_anomalies(fam)
