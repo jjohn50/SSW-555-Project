@@ -17,21 +17,20 @@
 
 # US26 - Justin
 # No more than one family with the same spouses by name and the same marriage date should appear in a GEDCOM file 
-def Unique_fam(fam):
-      for i in range(0,len(fam.individualObject)-1):
-        husbandname = fam.husbandObject[i].name
-        husbandbirth = fam.husbandObject[i].birthdate
-        wifename = fam.wifeObject[i].name
-        wifebirth= fam.wifeObject[i].birthdate
-        for j in range(i+1, len(indiv.individualObject)-1):
-            husbandname2 = fam.husbandObject[i].name
-            husbandbirth2 = fam.husbandObject[i].birthdate
-            wifename2 = fam.wifeObject[i].name
-            wifebirth=2 fam.wifeObject[i].birthdate
-            if(husband == husband2 or wife == wife2):  
-                indiv.anomalies.append("Same spouse with name and marriage date present")  
+def US26_Unique_fam(id_list):
+  duplicates = {} 
+  for obj in id_list:
+    if obj.husbandObject.name + obj.wifeObject.name + str(obj.marriageDateObject) not in str(duplicates.items()):  
+        duplicates.update({obj.husbandObject.name + obj.wifeObject.name + str(obj.marriageDateObject):[obj]})
+    else: 
+        duplicates[obj.husbandObject.name + obj.wifeObject.name + str(obj.marriageDateObject)].append(obj)
+  for key, value in duplicates.items():
+      if len(value) > 1:
+          errorMsg = "There are " + str(len(value)) + " families with the same spouse and same marriage date"  
+          for obj in value:
+              obj.errors.append(errorMsg)               
 
-
+            
 # US27 - Angie
 
 
