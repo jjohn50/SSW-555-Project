@@ -3,7 +3,7 @@
 1 SOUR Family Echo
 2 WWW http://www.familyecho.com/ 
 1 FILE My Family
-1 DATE 7 SEP 2020
+1 DATE 7 SEP 2020 
 1 DEST ANSTFILE
 1 GEDC
 2 VERS 5.5.1
@@ -13,6 +13,15 @@
 1 SUBN
 1 CHAR UTF-8
 0 @I1@ INDI
+1 NAME Angelina /Zaccaria/
+2 GIVN Angelina
+2 SURN Zaccaria
+2 _MARNM Zaccaria
+1 SEX F
+1 BIRT
+2 DATE 11 AUG 1999
+1 FAMC @F1@
+0 @I23@ INDI
 1 NAME Angelina /Zaccaria/
 2 GIVN Angelina
 2 SURN Zaccaria

@@ -53,7 +53,7 @@ labels = ["INDI","NAME","SEX","BIRT","DEAT","FAMC","FAMS","FAM","MARR","HUSB","W
 individuals = []
 families = []
 
-def get_individual_by_id(individualId):
+def get_individual_by_id(individualId):  
   for i in individuals:
     if i.Id == individualId:
       return i
