@@ -5,7 +5,7 @@ from sprint3_user_stories import *
 
 # individual errors and anomalies
 def check_individuals_for_errors_and_anomalies():
-  US24_Unique_IDs(individuals, "individuals")
+  US24_Unique_IDs(individuals,"individuals")
   US25_unique_birthday_and_name(individuals)
   for indiv in individuals:
     US01_check_date_before_today_error(indiv,"Birth")
