@@ -68,16 +68,16 @@ def US23_Correct_gender_for_role(fam):
         fam.errors.append("Wife is a male")
         
 # US24 - Matt
-def US24_Unique_IDs(id_list, identifier):
+def US24_Unique_IDs(id_list):
     duplicates = {}
     for obj in id_list:
-        if obj.Id not in str(duplicates.items()):
-            duplicates.update({obj.Id:[obj]})
+        if obj.husbandObject.Id + obj.wifeObject.Id + str(obj.Id) not in str(duplicates.items()):
+            duplicates.update({obj.husbandObject.Id + obj.wifeObject.Id + str(obj.Id):[obj]})
         else:
-            duplicates[obj.Id].append(obj)
+            duplicates[obj.husbandObject.Id + obj.wifeObject.Id + obj.Id].append(obj)
     for key, value in duplicates.items():
         if len(value) > 1:
-            errorMsg = "There are " + str(len(value)) + " " + identifier + " with id " + key
+            errorMsg = "There are " + str(len(value)) + " " + "same with id "
             for obj in value:
                 obj.errors.append(errorMsg)
 

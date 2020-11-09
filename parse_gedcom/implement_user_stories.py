@@ -5,7 +5,6 @@ from sprint3_user_stories import *
 
 # individual errors and anomalies
 def check_individuals_for_errors_and_anomalies():
-  US24_Unique_IDs(individuals,"individuals")
   US25_unique_birthday_and_name(individuals)
   for indiv in individuals:
     US01_check_date_before_today_error(indiv,"Birth")
@@ -19,7 +18,7 @@ def check_individuals_for_errors_and_anomalies():
     
 # family errors and anomalies
 def check_families_for_errors_and_anomalies():
-  US24_Unique_IDs(families,"families")
+  US24_Unique_IDs(families)
   US26_Unique_fam(families)
   for fam in families:
     US01_check_date_before_today_error(fam,"Marriage")
