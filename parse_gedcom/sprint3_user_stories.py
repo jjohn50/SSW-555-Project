@@ -149,7 +149,10 @@ def US28_corresponding_family_entries_error(fam):
             fam.errors.append("Corresponding child family not listed for " + child.Id)
 
 # US29 - Liv
-### THIS ALREADY EXISTS
+# display individuals ages
+# This user story is integrated into the parser.py file
+# We have been utilizing it throughout the project and many functions depend on it
+# I utilized my time and resources to help my teammates complete their stories
 
 # US30 - Liv
 def US30_large_age_gaps_between_couples_anomalies(fam):
