@@ -20,6 +20,7 @@ def check_individuals_for_errors_and_anomalies():
 # family errors and anomalies
 def check_families_for_errors_and_anomalies():
   US24_Unique_IDs(families,"families")
+  US26_Unique_fam(families)
   for fam in families:
     US01_check_date_before_today_error(fam,"Marriage")
     if fam.divorced == True:
