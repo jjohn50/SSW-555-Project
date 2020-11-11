@@ -48,3 +48,6 @@ def check_families_for_errors_and_anomalies():
     US27_no_duplicate_children_error(fam)
     US28_corresponding_family_entries_error(fam)
     US30_large_age_gaps_between_couples_anomalies(fam)
+
+def print_lists():
+  US33_print_living_married(families)
