@@ -50,4 +50,6 @@ def check_families_for_errors_and_anomalies():
     US30_large_age_gaps_between_couples_anomalies(fam)
 
 def print_lists():
+  US31_print_fam_with_no_errors_or_anomalies(families)
   US33_print_living_married(families)
+  
