@@ -1,7 +1,20 @@
 # US31 - Jenn
 
 # US32 - Jenn
+def US32_list_deceased(individuals):
+    deceased = []
+    for indiv in individuals:
+        if indiv.alive == False: 
+            deceased.append(indiv)
+    return deceased
 
+def US32_print_deceased(individuals):
+    print("List of deceased people:")
+    print("------------------------------")
+    deceased = US32_list_deceased(individuals)
+    for indiv in deceased:
+        print(indiv.Id + ": " + indiv.name)
+    print("\n")
 # US33 - Matt
 # List all living married people in a GEDCOM file
 def US33_list_living_married(families):
