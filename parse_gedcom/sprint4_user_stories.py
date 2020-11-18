@@ -1,3 +1,4 @@
+from datetime import datetime
 # US31 - Jenn
 
 # US32 - Jenn
@@ -24,7 +25,25 @@ def US33_print_living_married(families):
 # US35 - Angie
 
 # US36 - Justin
+#List all people in a GEDCOM file who were born in the last 30 days
+def US36_recent_births(individuals):
+    recent_births = []
+    for indiv in individuals:
+        day1 = indiv.birthDateObject    
+        day2 = datetime(2020,11,18)
+        day3 = ((day2-day1).days)
+        if ((day3) <= 30):
+            recent_births.append(indiv)
+    return recent_births
 
+def US36_print_recent_births(individuals):
+    print("List of recent births people:")
+    print("------------------------------")
+    recent_births = US36_recent_births(individuals)
+    for indiv in recent_births:
+        print(indiv.Id + ": " + indiv.name)
+    print("\n")
+ 
 # US37 - Justin
 
 # US38 - Liv
