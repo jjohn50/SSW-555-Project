@@ -31,11 +31,12 @@ def US33_print_living_married(families):
 def US37_recent_death(individuals):
     recent_death = []
     for indiv in individuals:
-        day1 = indiv.deathDate
-        day2 = datetime(2020,11,18)
-        day3 = ((day2-day1).days)
-        if ((day3) <= 30):
-            recent_death.append(indiv)
+        if indiv.alive == False: 
+            day1 = indiv.deathDateObject
+            day2 = datetime(2020,11,18)
+            day3 = ((day2-day1).days)
+            if ((day3) <= 30):
+             recent_death.append(indiv)
     return recent_death
 
 def US37_print_recent_death(individuals):
