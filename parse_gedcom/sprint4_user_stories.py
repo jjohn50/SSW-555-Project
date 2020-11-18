@@ -20,6 +20,21 @@ def US33_print_living_married(families):
     print("\n")
 
 # US34 - Matt
+def US34_list_singles(individuals):
+    #List all living people over 30 who have never been married in a GEDCOM file 
+    singles = []
+    for indiv in individuals:
+        if indiv.spouseFamilyObjects == [] and int(indiv.age) > 30:
+            singles.append(indiv)
+    return singles
+
+def US34_print_singles(individuals):
+    print("List of single people:")
+    print("------------------------------")
+    singles = US34_list_singles(individuals)   
+    for indiv in singles:
+        print(indiv.Id + ": " + indiv.name)
+    print("\n") 
 
 # US35 - Angie
 
