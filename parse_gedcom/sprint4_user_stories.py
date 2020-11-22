@@ -13,7 +13,7 @@ def US33_list_living_married(families):
 
 def US33_print_living_married(families):
     print("List of living married people:")
-    print("------------------------------")
+    print("------------------------------")   
     living_married = US33_list_living_married(families)
     for fam in living_married:
         print(fam.Id + ": " + fam.husbandObject.name + " and " + fam.wifeObject.name)
