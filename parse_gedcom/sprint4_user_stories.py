@@ -45,7 +45,24 @@ def US38_print_upcoming_birthdays(individuals):
     upcoming_bdays = US38_list_upcoming_birthdays(individuals)
     for individual in upcoming_bdays:
         print(individual.Id +": " + individual.name + ", " + individual.birthDateString)
+    print("\n")
 
 # US39 - Liv
+def US39_list_upcoming_anniversaries(families):
+    upcoming_anniv = []
+    for fam in families:
+        anniv_this_year = datetime(datetime.now().year, fam.marriageDateObject.month, fam.marriageDateObject.day)
+        anniv_next_year = datetime(datetime.now().year+1, fam.marriageDateObject.month, fam.marriageDateObject.day)
+        if fam.divorced == False and (((anniv_this_year - datetime.now()).days <= 30 and (anniv_this_year - datetime.now()).days > 0) or ((anniv_next_year - datetime.now()).days <= 30 and (anniv_next_year - datetime.now()).days > 0)):
+            upcoming_anniv.append(fam)
+    return upcoming_anniv
+
+def US39_print_upcoming_anniversaries(families):
+    print("List of those with upcoming anniversaries:")
+    print("--------------------------------------")
+    upcoming_anniv = US39_list_upcoming_anniversaries(families)
+    for fam in upcoming_anniv:
+        print(fam.Id +": " + fam.wifeObject.name + " and " + fam.husbandObject.name + ", " + fam.marriageDateString)
+    print("\n")
 
 # US40 - Angie
