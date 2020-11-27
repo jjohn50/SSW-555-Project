@@ -201,8 +201,8 @@
 2 DATE 12 SEP 1962
 1 FAMS @F7@
 0 @I19@ INDI
-1 NAME Jeff /Tyther/
-2 GIVN Jeff
+1 NAME Jeff'sTwin /Tyther/
+2 GIVN Jeff'sTwin
 2 SURN Tyther
 2 _MARNM Tyther
 1 SEX M
@@ -210,22 +210,22 @@
 2 DATE 15 OCT 1977
 1 FAMC @F6@
 0 @I20@ INDI
-1 NAME Jeff /Tyther/
-2 GIVN Jeff
+1 NAME Jeff'sTriplet /Tyther/
+2 GIVN Jeff'sTriplet
 2 SURN Tyther
 2 _MARNM Tyther
 1 SEX M
 1 BIRT
-2 DATE 15 OCT 1977
+2 DATE 16 OCT 1977
 1 FAMC @F6@
 0 @I21@ INDI
-1 NAME Jeff /Tyther/
-2 GIVN Jeff
+1 NAME Jeff'sQuadruplet /Tyther/
+2 GIVN Jeff'sQuadruplet
 2 SURN Tyther
 2 _MARNM Tyther
 1 SEX M
 1 BIRT
-2 DATE 15 OCT 1977
+2 DATE 14 OCT 1977
 1 FAMC @F6@
 0 @I22@ INDI
 1 NAME Jeff /Tyther/
