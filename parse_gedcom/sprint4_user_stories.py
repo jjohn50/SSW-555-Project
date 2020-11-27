@@ -30,20 +30,19 @@ def US35_list_multiple_births(families):
     for fam in families:
         multiples = {}
         for child in fam.childrenObjects:
-            print(str(multiples.items()))
-            if str(child.birthDateObject) in str(multiples.items()):
-                multiples[child.birthDateObject].append(child.name + "(" + child.Id + ")")
-            elif str(child.birthDateObject + timedelta(days=1)) in str(multiples.items()):
-                multiples[child.birthDateObject + timedelta(days=1)].append(child.name + "(" + child.Id + ")")
-            elif str(child.birthDateObject - timedelta(days=1)) in str(multiples.items()):
-                multiples[child.birthDateObject - timedelta(days=1)].append(child.name + "(" + child.Id + ")")
+            if child.birthDateObject in multiples:
+                multiples[child.birthDateObject].append(child.name + " (" + child.Id + ")")
+            elif child.birthDateObject + timedelta(days=1) in multiples:
+                multiples[child.birthDateObject + timedelta(days=1)].append(child.name + " (" + child.Id + ")")
+            elif child.birthDateObject - timedelta(days=1) in multiples:
+                multiples[child.birthDateObject - timedelta(days=1)].append(child.name + " (" + child.Id + ")")
             else:
-                multiples.update({child.birthDateObject:[fam.Id + ": " + child.name + "(" + child.Id + ")"]})
+                multiples.update({child.birthDateObject:[fam.Id + ": " + child.name + " (" + child.Id + ")"]})
         for key, value in multiples.items():
             if len(value) > 1:
-                output = key.value[0]
+                output = value[0]
                 for child in range(1,len(value)):
-                    output += ", " + child
+                    output += ", " + value[child]
                 multiple_births.append(output)
     return multiple_births
 
