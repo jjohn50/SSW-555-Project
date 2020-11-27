@@ -32,10 +32,10 @@ def US33_print_living_married(families):
 # US38 - Liv
 def US38_list_upcoming_birthdays(individuals):
     upcoming_bdays = []
-    print(datetime.now())
     for individual in individuals:
-        print(datetime(datetime.now().year, individual.birthDateObject.month, individual.birthDateObject.day) - datetime.now())
-        if individual.alive == True and datetime(datetime.now().year, individual.birthDateObject.month, individual.birthDateObject.day) - datetime.now() <= 30:
+        birthday_this_year = datetime(datetime.now().year, individual.birthDateObject.month, individual.birthDateObject.day)
+        birthday_next_year = datetime(datetime.now().year+1, individual.birthDateObject.month, individual.birthDateObject.day)
+        if individual.alive == True and (((birthday_this_year - datetime.now()).days <= 30 and (birthday_this_year - datetime.now()).days > 0) or ((birthday_next_year - datetime.now()).days <= 30 and (birthday_next_year - datetime.now()).days > 0)):
             upcoming_bdays.append(individual)
     return upcoming_bdays
 
