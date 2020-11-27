@@ -1,3 +1,5 @@
+from datetime import datetime
+
 # US31 - Jenn
 
 # US32 - Jenn
@@ -28,6 +30,21 @@ def US33_print_living_married(families):
 # US37 - Justin
 
 # US38 - Liv
+def US38_list_upcoming_birthdays(individuals):
+    upcoming_bdays = []
+    print(datetime.now())
+    for individual in individuals:
+        print(datetime(datetime.now().year, individual.birthDateObject.month, individual.birthDateObject.day) - datetime.now())
+        if individual.alive == True and datetime(datetime.now().year, individual.birthDateObject.month, individual.birthDateObject.day) - datetime.now() <= 30:
+            upcoming_bdays.append(individual)
+    return upcoming_bdays
+
+def US38_print_upcoming_birthdays(individuals):
+    print("List of those with upcoming birthdays:")
+    print("--------------------------------------")
+    upcoming_bdays = US38_list_upcoming_birthdays(individuals)
+    for individual in upcoming_bdays:
+        print(individual.Id +": " + individual.name + ", " + individual.birthDateString)
 
 # US39 - Liv
 
