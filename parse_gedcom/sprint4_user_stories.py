@@ -33,9 +33,9 @@ def US37_recent_death(individuals):
     for indiv in individuals:
         if indiv.alive == False: 
             day1 = indiv.deathDateObject
-            day2 = datetime(2020,11,18)
-            day3 = ((day2-day1).days)
-            if ((day3) <= 30):
+            day2 = datetime.now()
+            daysPassed = ((day2-day1).days) 
+            if ((daysPassed) <= 30):
              recent_death.append(indiv)
     return recent_death
 
@@ -43,7 +43,7 @@ def US37_print_recent_death(individuals):
     print("List of recent deaths:")
     print("------------------------------")
     recent_death = US37_recent_death(individuals)
-    for indiv in recent_death:
+    for indiv in recent_death:   
         print(indiv.Id + ": " + indiv.name)
     print("\n")
       
