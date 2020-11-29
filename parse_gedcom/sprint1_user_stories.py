@@ -1,4 +1,5 @@
 from datetime import datetime
+from os import sys
 
 # Justin
 def US01_check_date_before_today_error(indiv_or_fam,identifier):
@@ -10,8 +11,14 @@ def US01_check_date_before_today_error(indiv_or_fam,identifier):
     dateObject = indiv_or_fam.marriageDateObject
   elif identifier == "Divorce":
     dateObject = indiv_or_fam.divorceDateObject
-  if datetime.now() < dateObject:
-      indiv_or_fam.errors.append(identifier + " date is after current date")
+  # US40 - Angie
+  # reject illegitimate dates
+  try:
+    if datetime.now() < dateObject:
+        indiv_or_fam.errors.append(identifier + " date is after current date")
+  except TypeError:
+    print(indiv_or_fam.Id + ": " + "Invalid " + identifier + " Date")
+    sys.exit(-1)
 
 # Justin
 def US02_birth_before_marriage_error(fam):

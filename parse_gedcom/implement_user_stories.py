@@ -13,7 +13,7 @@ def check_individuals_for_errors_and_anomalies():
     if indiv.alive == False:
       US01_check_date_before_today_error(indiv,"Death")
     US03_check_birth_before_death_error(indiv)
-    #US07_check_age_less_than_150_error(indiv)
+    US07_check_age_less_than_150_error(indiv)
     US11_no_bigamy_anomaly(indiv)
     US28_corresponding_individual_entries_error(indiv)
     
@@ -50,5 +50,11 @@ def check_families_for_errors_and_anomalies():
     US30_large_age_gaps_between_couples_anomalies(fam)
 
 def print_lists():
+  US31_print_fam_with_no_errors_or_anomalies(families)
+  US32_print_deceased(individuals)
   US33_print_living_married(families)
+  US34_print_singles(individuals)  
+  US35_print_multiple_births(families)
   US36_print_recent_births(individuals)
+  US38_print_upcoming_birthdays(individuals)
+  US39_print_upcoming_anniversaries(families)
