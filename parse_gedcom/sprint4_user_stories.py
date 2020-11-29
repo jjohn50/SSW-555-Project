@@ -1,7 +1,20 @@
 from datetime import datetime, timedelta
 
 # US31 - Jenn
+def US31_list_fam_with_no_errors_or_anomalies(families):
+    no_errorOrAnomalies = []
+    for fam in families:
+        if len(fam.errors) == 0 and len(fam.anomalies) == 0:
+            no_errorOrAnomalies.append(fam)
+    return no_errorOrAnomalies
 
+def US31_print_fam_with_no_errors_or_anomalies(families):
+    print("List of families with no errors or anomalies:")
+    print("------------------------------")
+    no_errorOrAnomalies = US31_list_fam_with_no_errors_or_anomalies(families)
+    for fam in no_errorOrAnomalies:
+        print(fam.Id)
+    print("\n")
 # US32 - Jenn
 
 # US33 - Matt
