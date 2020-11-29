@@ -30,9 +30,9 @@ def US36_recent_births(individuals):
     recent_births = []
     for indiv in individuals:
         day1 = indiv.birthDateObject    
-        day2 = datetime(2020,11,18)
-        day3 = ((day2-day1).days)
-        if ((day3) <= 30):
+        day2 = datetime.now()
+        daysPassed = ((day2-day1).days)
+        if ((daysPassed) <= 30):
             recent_births.append(indiv)
     return recent_births
 
