@@ -15,6 +15,7 @@ def US31_print_fam_with_no_errors_or_anomalies(families):
     for fam in no_errorOrAnomalies:
         print(fam.Id)
     print("\n")
+    
 # US32 - Jenn
 def US32_list_deceased(individuals):
     deceased = []
@@ -30,6 +31,7 @@ def US32_print_deceased(individuals):
     for indiv in deceased:
         print(indiv.Id + ": " + indiv.name)
     print("\n")
+    
 # US33 - Matt
 # List all living married people in a GEDCOM file
 def US33_list_living_married(families):
@@ -96,7 +98,25 @@ def US35_print_multiple_births(families):
     print("\n")
 
 # US36 - Justin
+#List all people in a GEDCOM file who were born in the last 30 days
+def US36_recent_births(individuals):
+    recent_births = []
+    for indiv in individuals:
+        day1 = indiv.birthDateObject    
+        day2 = datetime.now()
+        daysPassed = ((day2-day1).days)
+        if ((daysPassed) <= 30):
+            recent_births.append(indiv)
+    return recent_births
 
+def US36_print_recent_births(individuals):
+    print("List of recent births people:")
+    print("------------------------------")
+    recent_births = US36_recent_births(individuals)
+    for indiv in recent_births:
+        print(indiv.Id + ": " + indiv.name)
+    print("\n")
+ 
 # US37 - Justin
 
 # US38 - Liv
