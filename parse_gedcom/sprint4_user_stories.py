@@ -118,7 +118,25 @@ def US36_print_recent_births(individuals):
     print("\n")
  
 # US37 - Justin
+def US37_recent_death(individuals):
+    recent_death = []
+    for indiv in individuals:
+        if indiv.alive == False: 
+            day1 = indiv.deathDateObject
+            day2 = datetime.now()
+            daysPassed = ((day2-day1).days) 
+            if ((daysPassed) <= 30):
+             recent_death.append(indiv)
+    return recent_death
 
+def US37_print_recent_death(individuals):
+    print("List of recent deaths:")
+    print("------------------------------")
+    recent_death = US37_recent_death(individuals)
+    for indiv in recent_death:   
+        print(indiv.Id + ": " + indiv.name)
+    print("\n")
+      
 # US38 - Liv
 def US38_list_upcoming_birthdays(individuals):
     upcoming_bdays = []
