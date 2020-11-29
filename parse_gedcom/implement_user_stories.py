@@ -52,4 +52,6 @@ def check_families_for_errors_and_anomalies():
 def print_lists():
   US31_print_fam_with_no_errors_or_anomalies(families)
   US33_print_living_married(families)
-  
+  US35_print_multiple_births(families)
+  US38_print_upcoming_birthdays(individuals)
+  US39_print_upcoming_anniversaries(families)
