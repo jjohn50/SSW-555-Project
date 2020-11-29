@@ -33,7 +33,7 @@ def US34_print_singles(individuals):
     print("------------------------------")
     singles = US34_list_singles(individuals)   
     for indiv in singles:
-        print(indiv.Id + ": " + indiv.name)
+        print(indiv.Id + ": " + indiv.name) 
     print("\n") 
 
 # US35 - Angie

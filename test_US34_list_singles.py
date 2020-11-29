@@ -5,38 +5,59 @@ from parse_gedcom.sprint4_user_stories import US34_list_singles
 class Test(unittest.TestCase):
 
     def setUp(self):
-        indiv = Individual("I1")
-        indiv1 = Individual("I2")
-        indiv2 = Individual("I3")
-        indiv3 = Individual("I4")
-        indiv4 = Individual("I5")
-        indiv.age = 30
-        indiv1.age = 40
-        indiv2.age = 20
-        indiv3.age = 25       
-        indiv4.age = 35  
-        indiv.spouseFamilyObjects = []
-        indiv1.spouseFamilyObjects = []
-        indiv2.spouseFamilyObjects = [] 
-        indiv3.spouseFamilyObjects = [] 
-        indiv4.spouseFamilyObjects = [] 
+        self.indiv1 = Individual("I1")
+        self.indiv2 = Individual("I2")  
+        self.indiv1.spouseFamilyObjects = []
+        self.indiv2.spouseFamilyObjects = []
+        self.individuals = [self.indiv1, self.indiv2]
 
     def test_people_over_30_not_married(self):
-        indiv = Individual("I1")
-        indiv1 = Individual("I2")
-        indiv2 = Individual("I3")
-        US34_list_singles(indiv)
-        US34_list_singles(indiv1)
-        US34_list_singles(indiv2)
-        self.assertEqual(US34_list_singles(indiv.errors), []) 
+        indiv1 = self.indiv1
+        indiv2 = self.indiv2
+        indiv1.age = 35
+        indiv2.age = 45
+        individuals = self.individuals
+        self.assertEqual(US34_list_singles(individuals), [indiv1, indiv2]) 
 
     def test_people_under_30_not_married(self):
-      indiv = Individual("I3")
-      invid = Individual("I4")
-       US34_list_singles(indiv)
-       US34_list_singles(indiv1)
-       US34_list_singles(indiv2)
-      self.assertEqual(US34_list_singles(self.families), [])
+        indiv1 = self.indiv1
+        indiv2 = self.indiv2
+        indiv1.age = 20
+        indiv2.age = 21 
+        individuals = self.individuals
+        self.assertEqual(US34_list_singles(individuals), []) 
+        
+    def test_people_under_30_one_married(self):
+        indiv1 = self.indiv1
+        indiv2 = self.indiv2
+        indiv3 = Individual("I3")
+        indiv1.age = 26
+        indiv2.age = 27
+        indiv3.age = 28
+        individuals = self.individuals
+        individuals.append(indiv3)
+        fam = Family("F1")
+        fam.husbandObject = indiv1
+        fam.wifeObjecet = indiv3
+        indiv1.spouseFamilyObjects.append(fam)
+        indiv3.spouseFamilyObjects.append(fam)
+        self.assertEqual(US34_list_singles(individuals), [])
+        
+    def test_people_over_30_one_married(self):
+        indiv1 = self.indiv1
+        indiv2 = self.indiv2
+        indiv3 = Individual("I3")
+        indiv1.age = 45
+        indiv2.age = 34 
+        indiv3.age = 36
+        individuals = self.individuals
+        individuals.append(indiv3)
+        fam = Family("F1")
+        fam.husbandObject = indiv1
+        fam.wifeObjecet = indiv3
+        indiv1.spouseFamilyObjects.append(fam)
+        indiv3.spouseFamilyObjects.append(fam)
+        self.assertEqual(US34_list_singles(individuals), [indiv2])
 
 if __name__ == "__main__":
     unittest.main()
