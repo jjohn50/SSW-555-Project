@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # US31 - Jenn
 
@@ -24,6 +24,35 @@ def US33_print_living_married(families):
 # US34 - Matt
 
 # US35 - Angie
+# List all multiple births (same day or one day difference)
+def US35_list_multiple_births(families):
+    multiple_births = []
+    for fam in families:
+        multiples = {}
+        for child in fam.childrenObjects:
+            if child.birthDateObject in multiples:
+                multiples[child.birthDateObject].append(child.name + " (" + child.Id + ")")
+            elif child.birthDateObject + timedelta(days=1) in multiples:
+                multiples[child.birthDateObject + timedelta(days=1)].append(child.name + " (" + child.Id + ")")
+            elif child.birthDateObject - timedelta(days=1) in multiples:
+                multiples[child.birthDateObject - timedelta(days=1)].append(child.name + " (" + child.Id + ")")
+            else:
+                multiples.update({child.birthDateObject:[fam.Id + ": " + child.name + " (" + child.Id + ")"]})
+        for key, value in multiples.items():
+            if len(value) > 1:
+                output = value[0]
+                for child in range(1,len(value)):
+                    output += ", " + value[child]
+                multiple_births.append(output)
+    return multiple_births
+
+def US35_print_multiple_births(families):
+    print("List of multiple births:")
+    print("------------------------------")
+    multiple_births = US35_list_multiple_births(families)
+    for output in multiple_births:
+        print(output)
+    print("\n")
 
 # US36 - Justin
 
