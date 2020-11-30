@@ -174,3 +174,6 @@ def US39_print_upcoming_anniversaries(families):
     print("\n")
 
 # US40 - Angie
+# Reject illegitimate dates
+# added exception handling within US01
+# can't do any automated tests since it has to throw an exception and end the program
